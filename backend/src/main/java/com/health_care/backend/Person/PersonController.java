@@ -13,20 +13,16 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 @RestController
 @CrossOrigin
 public class PersonController {
-    
+
     @Autowired
     private PersonService service;
 
     @PostMapping("/authenticate-user")
-    public ObjectNode authenticateUser(@RequestBody Map<String,String> userMap){
+    public ObjectNode authenticateUser(@RequestBody Map<String, String> userMap) {
         String email = userMap.get("email");
         String password = userMap.get("password");
 
         return service.authenticatePerson(email, password);
     }
-
-    
-    
-
 
 }
