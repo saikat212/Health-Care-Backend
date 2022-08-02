@@ -10,7 +10,7 @@ public class SpecialityService {
     @Autowired
     SpecialityRepository repository;
 
-    public List<Specialities> getAllSpeciality(){
+    public List<Speciality> getAllSpeciality() {
         return repository.findAll();
     }
 }

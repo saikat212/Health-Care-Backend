@@ -27,7 +27,7 @@ public class Patient {
     private String address;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "personId", referencedColumnName = "id")
+    @JoinColumn(name = "id", referencedColumnName = "id")
     @MapsId
     private Person person;
 

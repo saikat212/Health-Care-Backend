@@ -17,11 +17,12 @@ import com.health_care.backend.Person.PersonService;
 @CrossOrigin
 public class DoctorController {
     @Autowired
-
     private DoctorService service;
+    
     private PersonService pService;
     @PostMapping("/addDoctor")
     public Doctor addDoctor(@RequestBody Doctor doctor){
+        System.out.println(doctor);
         return service.saveDoctor(doctor);
     }
     @GetMapping("doctor-id/{id}")
