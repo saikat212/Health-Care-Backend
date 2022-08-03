@@ -30,6 +30,12 @@ public class DoctorService {
        return findDoctorbyId(id);
         
     }
+    public Doctor[] getDoctorBySpeciality(Integer id){
+        Doctor[] doctors = repository.findBySpecialityId(id);
+        return doctors;
+        
+    }
+    
     
 
 

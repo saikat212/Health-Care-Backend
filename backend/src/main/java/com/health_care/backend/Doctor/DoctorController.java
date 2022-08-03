@@ -25,19 +25,23 @@ public class DoctorController {
         System.out.println(doctor);
         return service.saveDoctor(doctor);
     }
-    @GetMapping("doctor-id/{id}")
+    @GetMapping("/doctor-id/{id}")
     public Doctor getDoctorById(@PathVariable int id){
         return service.findDoctorbyId(id);
     }
-    @GetMapping("get-doctor-by-first-name/{name}")
+    @GetMapping("/get-doctor-by-first-name/{name}")
     public Doctor getDoctorByFirstName(@PathVariable String name){
         Person person = pService.getPersonByFirstName(name);
         return service.findDoctorbyId(person.getId());
     }
-    @GetMapping("get-doctor-by-last-name/{name}")
+    @GetMapping("/get-doctor-by-last-name/{name}")
     public Doctor getDoctorByLastName(@PathVariable String name){
         Person person = pService.getPersonByLastName(name);
         return service.findDoctorbyId(person.getId());
+    }
+    @GetMapping("/get-doctor-by-speciality/{id}")
+    public Doctor[] getDoctorsBySpeciality(@PathVariable Integer id){
+        return service.getDoctorBySpeciality(id);
     }
 
 

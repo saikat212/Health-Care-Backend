@@ -27,7 +27,6 @@ import lombok.NoArgsConstructor;
 
 public class Doctor{
     @Id
-
     private Integer id;
     private String chamber;
     private String bmdcNo;

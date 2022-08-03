@@ -18,8 +18,8 @@ public class PersonService {
     public Person saveUser(Person user){
         return repository.save(user);
     }
-    public Optional<Person> findPersonById(int id){
-        return repository.findById(id);
+    public Person findPersonById(int id){
+        return repository.findById(id).orElse(null);
     }
     public Person getPersonByFirstName(String name) {
         return repository.findByFirstName(name);
