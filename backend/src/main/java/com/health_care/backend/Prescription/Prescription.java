@@ -24,6 +24,7 @@ public class Prescription {
     @Id
     @GeneratedValue
     private Integer id;
+    private String problem;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "appointment_id", referencedColumnName = "id")

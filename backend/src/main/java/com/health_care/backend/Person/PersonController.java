@@ -26,9 +26,13 @@ public class PersonController {
 
         return service.authenticatePerson(email, password);
     }
-    @GetMapping("/person-id/{id}")
+    @GetMapping("/get-person-by-id/{id}")
     public Person getPersonById(@PathVariable int id){
         return service.findPersonById(id);
+    }
+    @GetMapping("/get-person-by-mail/{mail}")
+    public Person getPersonByEmail(@PathVariable String mail){
+        return service.getPersonByEmail(mail);
     }
 
 }
