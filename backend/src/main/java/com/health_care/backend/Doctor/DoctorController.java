@@ -43,6 +43,9 @@ public class DoctorController {
     public Doctor[] getDoctorsBySpeciality(@PathVariable Integer id){
         return service.getDoctorBySpeciality(id);
     }
-
+    @GetMapping("/search-doctor/{query}")
+    public Doctor[] searchDoctors(@PathVariable String query){
+        return service.searchDoctors(query);
+    }
 
 }

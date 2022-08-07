@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.databind.JsonNode;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,6 +31,7 @@ public class Person {
     private String mobileNo;
     private String password;
     private Date dateOfBirth;
+    private String role;
 
 
 }

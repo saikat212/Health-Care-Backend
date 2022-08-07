@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.FastByteArrayOutputStream;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -40,13 +41,14 @@ public class PersonService {
             return node
                        .put("success",false)
                        .put("message","User not found. Register first");
+
         else if(!password.equals(p.getPassword()))
             return node
                        .put("success",false)
                        .put("message","Password doesn't match");
         else if(password.equals(p.getPassword()))
             return node
-                       .put("success",false)
+                       .put("success",true)
                        .put("message","Login successful");
         else 
             return node 

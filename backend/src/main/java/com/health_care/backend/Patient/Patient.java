@@ -9,6 +9,9 @@ import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
+
 import com.health_care.backend.Person.Person;
 
 import lombok.AllArgsConstructor;
@@ -23,12 +26,16 @@ import lombok.NoArgsConstructor;
 
 public class Patient {
     @Id
-    private int id;
+    private Integer id;
     private String address;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "id", referencedColumnName = "id")
     @MapsId
     private Person person;
+    @Autowired(required = false)
+    private double weight;
+    @Autowired(required = false)
+    private double height;
 
 }

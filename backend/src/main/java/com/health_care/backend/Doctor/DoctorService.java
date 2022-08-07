@@ -35,6 +35,9 @@ public class DoctorService {
         return doctors;
         
     }
+    public Doctor[] searchDoctors(String query){
+        return repository.searchDoctorsByName(query);
+    }
     
     
 
