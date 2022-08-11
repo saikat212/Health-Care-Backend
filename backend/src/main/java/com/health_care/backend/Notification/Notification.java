@@ -29,6 +29,6 @@ public class Notification {
     private Person receiver;
     private String type;
     private String message;
-    private String status;
+    private String status;  //pending, placed
     
 }

@@ -18,7 +18,7 @@ public class Test_PrescriptionController {
     public Test_Prescription saveTest(@RequestBody Test_Prescription t){
         return service.saveTest(t);
     }
-    @GetMapping("/get-all-test")
+    @GetMapping("/get-all-test-in-prescription")
     public List<Test_Prescription> getAllTest(){
         return service.getAllTest();
     }

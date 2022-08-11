@@ -1,5 +1,7 @@
 package com.health_care.backend.Notification;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +13,8 @@ public class NotificationService {
     public Notification saveNotification(Notification notification){
         return repository.save(notification);
     }
-    public Notification getNotificationById(Integer id){
-        return repository.findById(id).orElse(null);
+    public List<Notification> getNotificationById(Integer id){
+        return repository.findByReceiverId(id)
+        ;
     }
 }

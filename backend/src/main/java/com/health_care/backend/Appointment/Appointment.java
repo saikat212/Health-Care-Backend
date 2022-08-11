@@ -37,8 +37,11 @@ public class Appointment {
     @JoinColumn(name = "doctor_id", referencedColumnName = "id")
     private Doctor doctor;
     private Date date;
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = true)
+    @OneToOne( fetch = FetchType.EAGER, optional = true)
     @JoinColumn(name = "payment_id", referencedColumnName = "id")
     private Payment payment;
     private String problem;
+    private String status; //pending, approved, rejected, closed
+    private String commentFromDoctor;
+    private Date dateGivenByDoctor;
 }

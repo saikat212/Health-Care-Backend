@@ -35,4 +35,5 @@ public class DC_Test {
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "test_id", referencedColumnName = "id")
     private Test test;
+    private double price;
 }

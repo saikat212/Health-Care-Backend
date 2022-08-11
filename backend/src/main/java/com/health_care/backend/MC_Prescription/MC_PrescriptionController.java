@@ -18,7 +18,7 @@ public class MC_PrescriptionController {
         return service.saveMedicine(p);
     }
 
-    @GetMapping("get-all-medicine")
+    @GetMapping("get-all-medicine-in-prescription")
     public List<MC_Prescription> getAllMedicine(){
         return service.getAll();
     }
