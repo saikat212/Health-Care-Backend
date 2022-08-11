@@ -11,11 +11,14 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.health_care.backend.DiagnosticCenter.DiagnosticCenter;
+import com.health_care.backend.Patient.Patient;
 import com.health_care.backend.Test.Test;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -37,3 +40,5 @@ public class DC_Test {
     private Test test;
     private double price;
 }
+
+
