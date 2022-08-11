@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface DoctorRepository extends JpaRepository<Doctor,Integer>{
 
+
     Doctor[] findBySpecialityId(Integer id);
 
      @Query("SELECT D FROM Doctor D JOIN Person P "+
