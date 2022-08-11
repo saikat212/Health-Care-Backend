@@ -1,10 +1,7 @@
 package com.health_care.backend.DC_Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -14,8 +11,8 @@ public class DC_TestController {
     @Autowired
     private DC_TestService service;
 
-    @PostMapping("/saveDc-test")
-    public DC_Test sDc_Test(DC_Test dc_Test){
+    @PostMapping("/addDCTest")
+    public DC_Test sDc_Test(@RequestBody  DC_Test dc_Test){
         return service.saveDc_Test(dc_Test);
     }
 
