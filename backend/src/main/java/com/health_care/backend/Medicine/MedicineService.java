@@ -13,4 +13,5 @@ public class MedicineService {
     public List<Medicine> getAllMedicine(){
         return repository.findAll();
     }
+    
 }

@@ -40,6 +40,7 @@ public class DC_Test {  //  dc appointment
     @JoinColumn(name = "p_id", referencedColumnName = "id")
     private Patient patient;
 
+
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "t_id", referencedColumnName = "id")
     private Taker taker;
