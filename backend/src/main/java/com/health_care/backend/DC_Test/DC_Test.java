@@ -1,4 +1,4 @@
-package com.health_care.backend.DCTestList;
+package com.health_care.backend.DC_Test;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -12,9 +12,6 @@ import javax.persistence.Table;
 
 import com.health_care.backend.DiagnosticCenter.DiagnosticCenter;
 import com.health_care.backend.Patient.Patient;
-
-import com.health_care.backend.Prescription.Prescription;
-
 import com.health_care.backend.Test.Test;
 
 import lombok.AllArgsConstructor;
@@ -29,11 +26,14 @@ import java.util.Date;
 @Entity
 @Table
 
-public class DCTestList {
+public class DC_Test {
     @Id
     @GeneratedValue
     private Integer id;
-
+    private Date Date;
+    private String status;
+    private String location;
+    
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "dc_id", referencedColumnName = "id")
     private DiagnosticCenter dc;
@@ -41,5 +41,9 @@ public class DCTestList {
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "test_id", referencedColumnName = "id")
     private Test test;
-    private double price;
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "p_id", referencedColumnName = "id")
+    private Patient patient;
+
 }

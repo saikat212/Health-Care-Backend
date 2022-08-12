@@ -21,7 +21,9 @@ public class PatientService {
     public Optional<Patient> findPatientById(int id){
         return repository.findById(id);
     }
-    /* public Patient findPatientByFirstName(String first_name){
-        return repository.findByFirstName(first_name);
-    } */
+    public void updateByHW(Patient patient){
+        System.out.println("Tesssssssssssssssssssssssssssssssss");
+        System.out.println(patient.getHeight()+" "+ patient.getWeight()+" "+ patient.getId());
+        repository.updateByHW(patient.getHeight(), patient.getWeight(), patient.getId());
+    }
 }

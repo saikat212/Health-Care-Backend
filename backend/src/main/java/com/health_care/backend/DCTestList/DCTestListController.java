@@ -10,7 +10,7 @@ public class DCTestListController {
     @Autowired
     private DCTestListService service;
 
-    @PostMapping("/addDCTest")
+    @PostMapping("/addDCTestList")
     public DCTestList sDc_Test(@RequestBody DCTestList dc_Test) {
         return service.saveDc_Test(dc_Test);
     }
