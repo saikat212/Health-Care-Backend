@@ -30,7 +30,7 @@ public class Appointment {
     @GeneratedValue
     private int id;
 
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "patient_id", referencedColumnName = "id")
     private Patient patient;
     @ManyToOne( fetch = FetchType.EAGER, optional = false)
