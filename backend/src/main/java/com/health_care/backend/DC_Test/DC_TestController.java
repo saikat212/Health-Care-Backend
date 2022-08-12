@@ -12,7 +12,7 @@ public class DC_TestController {
     private DC_TestService service;
 
     @PostMapping("/addDCTest")
-    public DC_Test sDc_Test(@RequestBody  DC_Test dc_Test){
+    public DC_Test sDc_Test(@RequestBody DC_Test dc_Test){
         return service.saveDc_Test(dc_Test);
     }
 
@@ -21,4 +21,11 @@ public class DC_TestController {
 
     @GetMapping("/get-pending-request")
     public List<DC_Test> getPendingRequest(){return service.getPendingRequest();}
+
+    @GetMapping("/get-confirmed-request")
+    public List<DC_Test> getConfirmedRequest() {return service.getConfirmedRequest();
+
+
+
+    }
 }

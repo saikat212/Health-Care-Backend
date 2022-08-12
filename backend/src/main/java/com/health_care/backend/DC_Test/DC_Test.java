@@ -1,17 +1,10 @@
 package com.health_care.backend.DC_Test;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import com.health_care.backend.DiagnosticCenter.DiagnosticCenter;
 import com.health_care.backend.Patient.Patient;
+import com.health_care.backend.Taker.Taker;
 import com.health_care.backend.Test.Test;
 
 import lombok.AllArgsConstructor;
@@ -26,25 +19,31 @@ import java.util.Date;
 @Entity
 @Table
 
-public class DC_Test {
+public class DC_Test {  //  dc appointment
     @Id
     @GeneratedValue
     private Integer id;
     private Date Date;
     private String status;
     private String location;
+    private String report;
     
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "dc_id", referencedColumnName = "id")
     private DiagnosticCenter dc;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "test_id", referencedColumnName = "id")
     private Test test;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "p_id", referencedColumnName = "id")
     private Patient patient;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "t_id", referencedColumnName = "id")
+    private Taker taker;
+
 
 }
 

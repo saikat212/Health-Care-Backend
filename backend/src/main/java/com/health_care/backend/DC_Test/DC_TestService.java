@@ -17,6 +17,11 @@ public class DC_TestService {
 
     public List<DC_Test> getAllRequest() {
         return repository.findAll();
+
     }
     public List<DC_Test> getPendingRequest() {return  repository.findPendingRequest();}
+    public List<DC_Test> getConfirmedRequest() {return repository.findConfirmedRequest();}
+
 }
+
+

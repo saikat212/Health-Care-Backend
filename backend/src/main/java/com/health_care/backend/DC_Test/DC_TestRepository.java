@@ -9,4 +9,8 @@ public interface DC_TestRepository extends JpaRepository<DC_Test, Integer>  {
 
     @Query("SELECT DT from DC_Test DT  where DT.status ='pending' ")
     List<DC_Test> findPendingRequest();
+
+    @Query("SELECT DT from DC_Test DT  where DT.status ='approved'")
+    List<DC_Test> findConfirmedRequest();
+
 }
