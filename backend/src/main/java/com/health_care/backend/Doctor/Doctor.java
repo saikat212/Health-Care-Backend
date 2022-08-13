@@ -35,6 +35,7 @@ public class Doctor{
     private double fee;
     private String degree;
     private String visitingDay;
+    private String visitingTime;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "speciality_id", referencedColumnName = "id")

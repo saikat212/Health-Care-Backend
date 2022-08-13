@@ -42,4 +42,5 @@ public class DCTestList {
     @JoinColumn(name = "test_id", referencedColumnName = "id")
     private Test test;
     private double price;
+    private int isAvailable; // 1 = available -------- 0 = not available
 }

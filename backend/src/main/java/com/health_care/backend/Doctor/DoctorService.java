@@ -38,6 +38,9 @@ public class DoctorService {
     public Doctor[] searchDoctors(String query){
         return repository.searchDoctorsByName(query);
     }
+    public void updateVisitingDayTime( Doctor doctor){
+        repository.updateVisitingDayTime(doctor.getVisitingDay(),doctor.getVisitingTime(),doctor.getId());
+    }
     
     
 

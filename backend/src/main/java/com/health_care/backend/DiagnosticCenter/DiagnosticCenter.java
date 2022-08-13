@@ -22,4 +22,7 @@ public class DiagnosticCenter {
     private Integer id;
     private String name;
     private String location;
+    private int isOfferOnsiteRequest; // 1 = offer -------- 0 = don't offer
+    private int registrationNum;
+    
 }
