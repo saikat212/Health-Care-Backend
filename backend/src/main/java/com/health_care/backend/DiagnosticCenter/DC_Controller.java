@@ -13,7 +13,7 @@ public class DC_Controller {
     @Autowired
     private DC_Service service;
 
-    @PostMapping("/save-dc")
+    @PostMapping("/addDC")
     public DiagnosticCenter saveDC(@RequestBody DiagnosticCenter dc){
         return service.saveDC(dc);
     }

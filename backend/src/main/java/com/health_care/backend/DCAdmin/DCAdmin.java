@@ -20,10 +20,11 @@ public class DCAdmin {
     private Integer id;
     private String dc_code;
     private String nid;
-
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "dc_id", referencedColumnName = "id")
-    private DiagnosticCenter dc;
+//
+//    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
+//    @JoinColumn(name = "dc_id", referencedColumnName = "id")
+//    @MapsId
+//    private DiagnosticCenter dc;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "id", referencedColumnName = "id")
