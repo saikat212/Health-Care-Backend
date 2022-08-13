@@ -24,10 +24,13 @@ public class DC_TestController {
 
 
     @GetMapping("/get-confirmed-request")
-    public List<DC_Test> getConfirmedRequest() {return service.getConfirmedRequest();
+    public List<DC_Test> getConfirmedRequest() {return service.getConfirmedRequest();}
+
+    @GetMapping("/get-submitted-request")
+    public List<DC_Test> getSubmittedRequest() { return service.getSubmittedRequest();}
 
 
 
     }
-}
+
 
