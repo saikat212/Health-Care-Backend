@@ -41,6 +41,7 @@ public class DCTestList {
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "test_id", referencedColumnName = "id")
     private Test test;
-    private double price;
-    private int isAvailable; // 1 = available -------- 0 = not available
+    private Integer price; // let int
+    private String isOnlineTestAvailable; // 1 = available -------- 0 = not available
+
 }

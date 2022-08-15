@@ -2,9 +2,11 @@ package com.health_care.backend.DC_Test;
 
 import javax.persistence.*;
 
+import com.health_care.backend.DCTestList.DCTestList;
 import com.health_care.backend.DiagnosticCenter.DiagnosticCenter;
 import com.health_care.backend.Patient.Patient;
 import com.health_care.backend.Taker.Taker;
+
 import com.health_care.backend.Test.Test;
 
 import lombok.AllArgsConstructor;
@@ -28,13 +30,13 @@ public class DC_Test {  //  dc appointment
     private String location;
     private String report;
     
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "dc_id", referencedColumnName = "id")
-    private DiagnosticCenter dc;
+//    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
+//    @JoinColumn(name = "dc_id", referencedColumnName = "id")
+//    private DiagnosticCenter dc;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "test_id", referencedColumnName = "id")
-    private Test test;
+    @JoinColumn(name = "dc_test_price", referencedColumnName = "id")
+    private DCTestList dcTestList;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "p_id", referencedColumnName = "id")

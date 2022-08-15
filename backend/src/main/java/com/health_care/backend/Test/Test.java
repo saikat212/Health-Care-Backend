@@ -25,4 +25,5 @@ public class Test {
     private Integer id;
     private String name;
     private String prerequisite;
+    private String description;
 }

@@ -3,5 +3,8 @@
   <component name="SqlDialectMappings">
     <file url="file://$USER_HOME$/MyDatabaseDataSQL/dc_test.sql" dialect="GenericSQL" />
     <file url="file://$USER_HOME$/MyDatabaseDataSQL/diagnostic_center.sql" dialect="GenericSQL" />
+    <file url="file://$USER_HOME$/MyDatabaseDataSQL/speciality.sql" dialect="GenericSQL" />
+    <file url="file://$USER_HOME$/MyDatabaseDataSQL/taker_speciality.sql" dialect="GenericSQL" />
+    <file url="file://$USER_HOME$/MyDatabaseDataSQL/test.sql" dialect="GenericSQL" />
   </component>
 </project>

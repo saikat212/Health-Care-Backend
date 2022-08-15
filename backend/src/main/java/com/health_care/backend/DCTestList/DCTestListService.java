@@ -13,5 +13,5 @@ public class DCTestListService {
     public DCTestList saveDc_Test(DCTestList dc_Test) {
         return repository.save(dc_Test);
     }
-
+    public List<DCTestList> getAllDCTestList() { return  repository.findAll();}
 }
