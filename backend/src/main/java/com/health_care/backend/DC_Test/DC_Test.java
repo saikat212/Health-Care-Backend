@@ -12,6 +12,9 @@ import com.health_care.backend.Test.Test;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
+import org.springframework.lang.Nullable;
 
 import java.util.Date;
 
@@ -34,17 +37,21 @@ public class DC_Test {  //  dc appointment
 //    @JoinColumn(name = "dc_id", referencedColumnName = "id")
 //    private DiagnosticCenter dc;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
+//    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "dc_test_price", referencedColumnName = "id")
     private DCTestList dcTestList;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "p_id", referencedColumnName = "id")
     private Patient patient;
 
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "t_id", referencedColumnName = "id")
+
+    // this property so that not null value can be assign
+    @NotFound(action = NotFoundAction.IGNORE)
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @JoinColumn(name = "t_id", referencedColumnName = "id",nullable = true)
     private Taker taker;
 
 
