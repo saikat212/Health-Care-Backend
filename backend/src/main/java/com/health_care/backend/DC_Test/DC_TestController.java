@@ -23,11 +23,15 @@ public class DC_TestController {
     public List<DC_Test> getPendingRequest(){return service.getPendingRequest();}
 
 
-    @GetMapping("/get-confirmed-request")
-    public List<DC_Test> getConfirmedRequest() {return service.getConfirmedRequest();}
+    @GetMapping("/get-confirmed-request/{id}")
+    public List<DC_Test> getConfirmedRequest(@PathVariable Integer id) {
 
-    @GetMapping("/get-submitted-request")
-    public List<DC_Test> getSubmittedRequest() { return service.getSubmittedRequest();}
+        System.out.println(id);
+        return service.getConfirmedRequest(id);
+    }
+
+    @GetMapping("/get-submitted-request/{id}")
+    public List<DC_Test> getSubmittedRequest(@PathVariable Integer id) { return service.getSubmittedRequest(id);}
 
 
 

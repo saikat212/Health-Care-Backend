@@ -1,10 +1,8 @@
 package com.health_care.backend.DiagnosticCenter;
 
+import com.health_care.backend.DC_Test.DC_Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,4 +18,9 @@ public class DC_Controller {
 
     @GetMapping("/get-all-dc-list")
     public List<DiagnosticCenter> getAllDCList() { return  service.getAllDCList();}
+
+    @GetMapping("/get-dc-by-admin-id/{id}")
+    public DiagnosticCenter getDCByAdminId(@PathVariable Integer id) { return  service.getDCByAdminId(id);}
+
+
 }
