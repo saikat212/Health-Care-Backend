@@ -19,7 +19,6 @@ import com.health_care.backend.Person.PersonService;
 public class DoctorController {
     @Autowired
     private DoctorService service;
-    
     private PersonService pService;
     @PostMapping("/addDoctor")
     public Doctor addDoctor(@RequestBody Doctor doctor){

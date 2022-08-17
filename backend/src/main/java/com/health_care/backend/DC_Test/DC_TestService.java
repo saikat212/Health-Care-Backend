@@ -23,6 +23,8 @@ public class DC_TestService {
 
     public List<DC_Test> getConfirmedRequest() {return repository.findConfirmedRequest();}
 
+    public List<DC_Test> getSubmittedRequest() {return repository.findSubmittedRequest();}
+
 }
 
 
