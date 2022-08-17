@@ -14,9 +14,12 @@ public class Test_PrescriptionController {
 
     private Test_PrescriptionService service;
 
-    @PostMapping("/save-test-prescription")
-    public Test_Prescription saveTest(@RequestBody Test_Prescription t){
-        return service.saveTest(t);
+    @PostMapping("/save-test-pres")
+    public void saveTest(@RequestBody Test_Prescription[] t){
+        for(int i=0;i<t.length;i++){
+            System.out.println("tttttt: "+t[i]);
+         service.saveTest(t[i]);
+        }
     }
     @GetMapping("/get-all-test-in-prescription")
     public List<Test_Prescription> getAllTest(){

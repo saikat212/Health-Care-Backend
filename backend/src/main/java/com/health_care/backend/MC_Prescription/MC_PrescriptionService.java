@@ -13,7 +13,7 @@ public class MC_PrescriptionService {
     public List<MC_Prescription> getAll(){
         return repository.findAll();
     }
-    public MC_Prescription saveMedicine(MC_Prescription p){
-        return repository.save(p);
+    public void saveMedicine(MC_Prescription p){
+         repository.save(p);
     }
 }

@@ -13,9 +13,12 @@ public class MC_PrescriptionController {
     @Autowired
     private MC_PrescriptionService service;
 
-    @PostMapping("/save-medicine")
-    public MC_Prescription saveMedicine(@RequestBody MC_Prescription p){
-        return service.saveMedicine(p);
+    @PostMapping("/save-medicine-pres")
+    public void saveMedicine(@RequestBody MC_Prescription[] p){
+        for(int i=0;i<p.length;i++){
+         System.out.println("sssssssssss: "+p[i]);
+         service.saveMedicine(p[i]);
+        }
     }
 
     @GetMapping("get-all-medicine-in-prescription")
