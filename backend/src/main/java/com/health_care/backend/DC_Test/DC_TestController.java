@@ -32,7 +32,8 @@ public class DC_TestController {
 
     @GetMapping("/get-submitted-request/{id}")
     public List<DC_Test> getSubmittedRequest(@PathVariable Integer id) { return service.getSubmittedRequest(id);}
-
+    @GetMapping("/get-offsite-pending")
+    public List<DC_Test> getOffsitePending(){return service.getOffsitePending();}
 
 
     }

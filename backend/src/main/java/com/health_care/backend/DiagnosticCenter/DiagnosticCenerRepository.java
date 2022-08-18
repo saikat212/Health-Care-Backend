@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface DiagnosticCenerRepository extends JpaRepository<DiagnosticCenter,Integer> {
-    @Query(value = "select * from DiagnosticCenter"+
+    @Query(value = "select * from Diagnostic_Center"+
             " where admin_id = :id",nativeQuery = true)
     DiagnosticCenter getDCByAdminId(@Param("id") Integer id);
 }

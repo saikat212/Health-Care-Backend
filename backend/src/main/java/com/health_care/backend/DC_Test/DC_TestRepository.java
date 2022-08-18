@@ -1,5 +1,6 @@
 package com.health_care.backend.DC_Test;
 
+import net.bytebuddy.utility.nullability.UnknownNull;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -32,6 +33,22 @@ public interface DC_TestRepository extends JpaRepository<DC_Test, Integer>  {
 
     )
     List<DC_Test> findSubmittedRequest(Integer id);
+
+
+//    @Query(value = " select D from DC_Test D join DCTest_List DTL on(D.dc_test_price = DTL.id) where  D.status = 'completed' and DTL.dc_id = 92 " ,nativeQuery = true)
+//    List<DC_Test> findSubmittedRequest(@Param("id") Integer id);
+
+//
+    @Query("SELECT D FROM DC_Test D JOIN DCTestList DTL "+
+            "ON(D.dcTestList.id = DTL.id)"+
+            "WHERE  D.status = 'pending' "+
+            " AND D.dcTestList.isOnlineTestAvailable ='no' "
+
+    )
+    List<DC_Test> findOffsitePending();
+
+//    @Query(value = "select D from DC_Test D join DCTest_List DTL on(D.dc_test_price = DTL.id) where  D.status = 'pending' and DTL.is_online_test_available ='no' " ,nativeQuery = true )
+//    List<DC_Test> findOffsitePending();
 
 }
 
