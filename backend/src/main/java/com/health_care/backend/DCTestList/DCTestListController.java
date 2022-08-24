@@ -23,6 +23,11 @@ public class DCTestListController {
     public List<DCTestList> getDCByTestname(@PathVariable String testname) { return  service.getDCByTestname(testname);}
 
 
+    @GetMapping("/get-test-list-by-dc-id/{id}")
+    public List<DCTestList> getTestListByDCId(@PathVariable Integer id) { return  service.getTestListByDCId(id);}
+
+
+
 //
 //    @GetMapping("/search-doctor/{query}")
 //    public Doctor[] searchDoctors(@PathVariable String query){
