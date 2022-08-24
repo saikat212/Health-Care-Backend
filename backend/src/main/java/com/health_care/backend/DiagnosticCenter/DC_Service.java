@@ -14,4 +14,6 @@ public class DC_Service {
         return repository.save(dc);
     }
     public List<DiagnosticCenter> getAllDCList() { return  repository.findAll();}
+
+    public  DiagnosticCenter getDCByAdminId(Integer id) {return repository.getDCByAdminId(id);}
 }

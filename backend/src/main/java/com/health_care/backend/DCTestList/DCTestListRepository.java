@@ -15,7 +15,7 @@ public interface DCTestListRepository extends JpaRepository<DCTestList, Integer>
 //            "OR P.lastName LIKE CONCAT('%',:query,'%')"
 //    )
     @Query("SELECT D FROM DCTestList D JOIN Test T "+
-            "ON(T.id = D.id)"+
+            "ON(T.id = D.test.id)"+
             "WHERE T.name LIKE CONCAT('%',:testname,'%') "
     )
     List<DCTestList> findDCByTestname(String testname);
