@@ -23,5 +23,8 @@ public class AppointmentService {
    void  updateAppointment(Appointment appointment){
          repository.updateAppoinment(appointment.getDateGivenByDoctor(),appointment.getCommentFromDoctor(),appointment.getStatus(),appointment.getId());
     }
+    void updatePrescriptionId(Integer id,Integer pid){
+        repository.updatePrescriptionId(id,pid);
+    }
    
 }

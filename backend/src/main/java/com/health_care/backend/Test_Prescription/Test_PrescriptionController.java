@@ -17,7 +17,6 @@ public class Test_PrescriptionController {
     @PostMapping("/save-test-pres")
     public void saveTest(@RequestBody Test_Prescription[] t){
         for(int i=0;i<t.length;i++){
-            System.out.println("tttttt: "+t[i]);
          service.saveTest(t[i]);
         }
     }

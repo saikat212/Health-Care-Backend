@@ -12,7 +12,6 @@ public class PrescriptionController {
 
     @PostMapping("/save-prescription")
     public Prescription savePrescription(@RequestBody Prescription p){
-        System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkk");
         System.out.println(p);
         return service.savePrescription(p);
     }

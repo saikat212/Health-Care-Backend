@@ -12,9 +12,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.health_care.backend.Doctor.Doctor;
 import com.health_care.backend.Patient.Patient;
 import com.health_care.backend.Payment.Payment;
+import com.health_care.backend.Prescription.Prescription;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -44,4 +47,8 @@ public class Appointment {
     private String status; //pending, approved, rejected, closed
     private String commentFromDoctor;
     private Date dateGivenByDoctor;
+
+    @OneToOne(fetch = FetchType.EAGER, optional = true)
+    @JoinColumn(name = "prescription_id", referencedColumnName = "id")
+    private Prescription prescription;
 }

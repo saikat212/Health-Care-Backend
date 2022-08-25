@@ -16,7 +16,6 @@ public class MC_PrescriptionController {
     @PostMapping("/save-medicine-pres")
     public void saveMedicine(@RequestBody MC_Prescription[] p){
         for(int i=0;i<p.length;i++){
-         System.out.println("sssssssssss: "+p[i]);
          service.saveMedicine(p[i]);
         }
     }
