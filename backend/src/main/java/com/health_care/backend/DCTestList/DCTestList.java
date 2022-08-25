@@ -1,14 +1,6 @@
 package com.health_care.backend.DCTestList;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import com.health_care.backend.DiagnosticCenter.DiagnosticCenter;
 import com.health_care.backend.Patient.Patient;
@@ -34,11 +26,11 @@ public class DCTestList {
     @GeneratedValue
     private Integer id;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "dc_id", referencedColumnName = "id")
     private DiagnosticCenter dc;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
+    @ManyToOne (cascade = CascadeType.ALL, fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "test_id", referencedColumnName = "id")
     private Test test;
     private Integer price; // let int

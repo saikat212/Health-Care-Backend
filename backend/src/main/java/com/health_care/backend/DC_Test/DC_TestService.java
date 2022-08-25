@@ -21,9 +21,11 @@ public class DC_TestService {
     }
     public List<DC_Test> getPendingRequest() {return  repository.findPendingRequest();}
 
-    public List<DC_Test> getConfirmedRequest() {return repository.findConfirmedRequest();}
+    public List<DC_Test> getConfirmedRequest(Integer id) {return repository.findConfirmedRequest(id);}
 
-    public List<DC_Test> getSubmittedRequest() {return repository.findSubmittedRequest();}
+    public List<DC_Test> getSubmittedRequest(Integer id) {return repository.findSubmittedRequest(id);}
+
+    public List<DC_Test> getOffsitePending() {return repository.findOffsitePending();}
 
 }
 
