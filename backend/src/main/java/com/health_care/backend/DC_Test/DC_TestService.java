@@ -23,7 +23,10 @@ public class DC_TestService {
 
     public List<DC_Test> getConfirmedRequest(Integer id) {return repository.findConfirmedRequest(id);}
 
+    public List<DC_Test> getCompletedService(Integer id) {return repository.getCompletedService(id);}
+
     public List<DC_Test> getSubmittedRequest(Integer id) {return repository.findSubmittedRequest(id);}
+    public List<DC_Test> getPendingACK(Integer id) {return repository.getPendingACK(id);}
 
     public List<DC_Test> getOffsitePending() {return repository.findOffsitePending();}
 
