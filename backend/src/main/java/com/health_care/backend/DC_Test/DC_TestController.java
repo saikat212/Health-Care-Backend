@@ -35,6 +35,12 @@ public class DC_TestController {
         return service.getCompletedService(id);
     }
 
+    @GetMapping("/get-lab-report/{id}")
+    public List<DC_Test> getLabReport(@PathVariable Integer id) {
+
+        return service.getLabReport(id);
+    }
+
 
     @GetMapping("/get-submitted-request/{id}")
     public List<DC_Test> getSubmittedRequest(@PathVariable Integer id) { return service.getSubmittedRequest(id);}

@@ -21,6 +21,10 @@ public interface DC_TestRepository extends JpaRepository<DC_Test, Integer>  {
             " where status ='completed' and  t_id = :id",nativeQuery = true)
     List<DC_Test> getCompletedService(@Param("id") Integer id);
 
+    @Query(value = "select * from DC_Test"+
+            " where p_id = :id",nativeQuery = true)
+    List<DC_Test> getLabReport(@Param("id") Integer id);
+
 //
 //    @Query(value = "select * from DC_Test"+
 //            " where status ='completed' and  dc_test_price.dc_id = :id ",nativeQuery = true)
