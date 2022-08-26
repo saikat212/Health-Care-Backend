@@ -17,7 +17,7 @@ public interface NotificationRepository extends JpaRepository<Notification, Inte
     
     @Modifying
     @Transactional
-    @Query(value = "update notification set status ='placed' where receiver_id = :id ",nativeQuery = true)
+    @Query(value = "update notification set status ='placed' where id = :id ",nativeQuery = true)
     void changeStatus(@Param("id") Integer id);
 
 }
