@@ -26,5 +26,9 @@ public class AppointmentService {
     void updatePrescriptionId(Integer id,Integer pid){
         repository.updatePrescriptionId(id,pid);
     }
+    //status = closed need to be inserted
+    public List<Appointment> getAppointmentByPatientId(Integer id){
+       return repository.findByPatientId(id);
+    }
    
 }

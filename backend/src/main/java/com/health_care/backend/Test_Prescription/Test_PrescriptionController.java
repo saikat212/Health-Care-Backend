@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,8 +21,8 @@ public class Test_PrescriptionController {
          service.saveTest(t[i]);
         }
     }
-    @GetMapping("/get-all-test-in-prescription")
-    public List<Test_Prescription> getAllTest(){
-        return service.getAllTest();
+    @GetMapping("/get-test-in-prescription/{id}")
+    public List<Test_Prescription> getAllTest(@PathVariable Integer id){
+        return service.getAllTest(id);
     }
 }

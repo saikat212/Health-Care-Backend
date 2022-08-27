@@ -37,5 +37,9 @@ public class AppointmentController {
         System.out.println("PIDDDDDDDDDDDDDDddd:  "+appointment.getPrescription().getId());
         service.updatePrescriptionId(appointment.getId(),appointment.getPrescription().getId());
     }
+    @GetMapping("/get-all-appointments/{id}")
+    public List<Appointment> getAppointmentByPatientId(@PathVariable Integer id){
+        return service.getAppointmentByPatientId(id);
+    }
    
 }

@@ -15,7 +15,7 @@ public class Test_PrescriptionService {
     public void saveTest(Test_Prescription t){
          repository.save(t);
     }
-    public List<Test_Prescription> getAllTest(){
-        return repository.findAll();
+    public List<Test_Prescription> getAllTest(Integer id){
+          return repository.findByPrescriptionId(id);
     }
 }
