@@ -34,6 +34,9 @@ public interface AppointmentRepository extends JpaRepository<Appointment,Integer
     "set prescription_id = :pid "+
     "where id = :id",nativeQuery = true)
     void updatePrescriptionId(@Param("id") Integer id,@Param("pid") Integer pid);
+
+    @Query(value="select * from appointment"+
+    " where patient_id = :id and status = 'closed' ",nativeQuery=true)
     List<Appointment> findByPatientId(Integer id);
     
 }
