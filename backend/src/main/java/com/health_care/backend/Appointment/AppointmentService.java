@@ -30,5 +30,9 @@ public class AppointmentService {
     public List<Appointment> getAppointmentByPatientId(Integer id){
        return repository.findByPatientId(id);
     }
+    void updateStatus(Appointment appt){
+        System.out.println("sssstttttuuuuu:"+appt.getStatus());
+        repository.updateStatus(appt.getId(), appt.getStatus());
+    }
    
 }

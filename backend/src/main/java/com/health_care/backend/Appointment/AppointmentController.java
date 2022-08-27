@@ -34,12 +34,15 @@ public class AppointmentController {
     }
     @PostMapping("/update-appointemnt")
     void updateAppoinmentByPrescription(@RequestBody Appointment appointment){
-        System.out.println("PIDDDDDDDDDDDDDDddd:  "+appointment.getPrescription().getId());
         service.updatePrescriptionId(appointment.getId(),appointment.getPrescription().getId());
     }
     @GetMapping("/get-all-appointments/{id}")
     public List<Appointment> getAppointmentByPatientId(@PathVariable Integer id){
         return service.getAppointmentByPatientId(id);
+    }
+    @PostMapping("/update-status")
+    void updateStatus(@RequestBody Appointment appt){
+        service.updateStatus(appt);
     }
    
 }
