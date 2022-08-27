@@ -30,8 +30,23 @@ public class DC_TestController {
         return service.getConfirmedRequest(id);
     }
 
+    @GetMapping("/get-completed-service/{id}")
+    public List<DC_Test> getCompletedService(@PathVariable Integer id) {
+        return service.getCompletedService(id);
+    }
+
+    @GetMapping("/get-lab-report/{id}")
+    public List<DC_Test> getLabReport(@PathVariable Integer id) {
+
+        return service.getLabReport(id);
+    }
+
+
     @GetMapping("/get-submitted-request/{id}")
     public List<DC_Test> getSubmittedRequest(@PathVariable Integer id) { return service.getSubmittedRequest(id);}
+    @GetMapping("/get-pending-ack/{id}")
+    public List<DC_Test> getPendingACK(@PathVariable Integer id) { return service.getPendingACK(id);}
+
     @GetMapping("/get-offsite-pending")
     public List<DC_Test> getOffsitePending(){return service.getOffsitePending();}
 
