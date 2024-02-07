@@ -22,7 +22,6 @@ public class PatientService {
         return repository.findById(id);
     }
     public void updateByHW(Patient patient){
-        System.out.println("Tesssssssssssssssssssssssssssssssss");
         System.out.println(patient.getHeight()+" "+ patient.getWeight()+" "+ patient.getId());
         repository.updateByHW(patient.getHeight(), patient.getWeight(), patient.getId());
     }

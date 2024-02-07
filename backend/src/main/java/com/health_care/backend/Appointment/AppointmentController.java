@@ -26,12 +26,23 @@ public class AppointmentController {
     public List<Appointment> getAppointmentList(@RequestBody Map<String,String> map){
         int _id = Integer.parseInt(map.get("id")) ;
         String status = map.get("status");
-        System.out.println(_id+" "+status);
         return service.getAppointments(_id, status);
     }
     @PutMapping("/appointment-confirmation")
     void  updateAppointment(@RequestBody Appointment appointment){
          service.updateAppointment(appointment);
+    }
+    @PostMapping("/update-appointemnt")
+    void updateAppoinmentByPrescription(@RequestBody Appointment appointment){
+        service.updatePrescriptionId(appointment.getId(),appointment.getPrescription().getId());
+    }
+    @GetMapping("/get-all-appointments/{id}")
+    public List<Appointment> getAppointmentByPatientId(@PathVariable Integer id){
+        return service.getAppointmentByPatientId(id);
+    }
+    @PostMapping("/update-status")
+    void updateStatus(@RequestBody Appointment appt){
+        service.updateStatus(appt);
     }
    
 }

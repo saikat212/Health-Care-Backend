@@ -1,7 +1,5 @@
 package com.health_care.backend.Doctor;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +17,6 @@ import com.health_care.backend.Person.PersonService;
 public class DoctorController {
     @Autowired
     private DoctorService service;
-    
     private PersonService pService;
     @PostMapping("/addDoctor")
     public Doctor addDoctor(@RequestBody Doctor doctor){

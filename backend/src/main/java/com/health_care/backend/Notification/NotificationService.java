@@ -14,7 +14,10 @@ public class NotificationService {
         return repository.save(notification);
     }
     public List<Notification> getNotificationById(Integer id){
-        return repository.findByReceiverId(id)
-        ;
+        return repository.findByReceiverId(id);
+    }
+    public void changeStatus(Integer id){
+        System.out.println("Id: "+id);
+        repository.changeStatus(id);
     }
 }

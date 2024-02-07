@@ -10,10 +10,10 @@ public class MC_PrescriptionService {
     @Autowired
     private MC_PrescriptionRepository repository;
 
-    public List<MC_Prescription> getAll(){
-        return repository.findAll();
+    public void saveMedicine(MC_Prescription p){
+         repository.save(p);
     }
-    public MC_Prescription saveMedicine(MC_Prescription p){
-        return repository.save(p);
+    public List<MC_Prescription> getPrescriptionById(int id){
+        return repository.findByPrescriptionId(id);
     }
 }

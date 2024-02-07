@@ -23,5 +23,16 @@ public class AppointmentService {
    void  updateAppointment(Appointment appointment){
          repository.updateAppoinment(appointment.getDateGivenByDoctor(),appointment.getCommentFromDoctor(),appointment.getStatus(),appointment.getId());
     }
+    void updatePrescriptionId(Integer id,Integer pid){
+        repository.updatePrescriptionId(id,pid);
+    }
+    //status = closed need to be inserted
+    public List<Appointment> getAppointmentByPatientId(Integer id){
+       return repository.findByPatientId(id);
+    }
+    void updateStatus(Appointment appt){
+        System.out.println("sssstttttuuuuu:"+appt.getStatus());
+        repository.updateStatus(appt.getId(), appt.getStatus());
+    }
    
 }
